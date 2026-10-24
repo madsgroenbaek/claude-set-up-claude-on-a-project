@@ -2,26 +2,32 @@
 // project stays easy to run. Data is not persisted — it resets every time
 // the server restarts.
 
-let users = [
+export interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+export type NewUser = Omit<User, "id">;
+
+const users: User[] = [
   { id: 1, name: "Ada Lovelace", email: "ada@example.com" },
   { id: 2, name: "Alan Turing", email: "alan@example.com" },
 ];
 
 let nextId = 3;
 
-function getAllUsers() {
+export function getAllUsers(): User[] {
   return users;
 }
 
-function getUserById(id) {
+export function getUserById(id: number): User | undefined {
   return users.find((user) => user.id === id);
 }
 
-function createUser({ name, email }) {
-  const user = { id: nextId, name, email };
+export function createUser({ name, email }: NewUser): User {
+  const user: User = { id: nextId, name, email };
   nextId += 1;
   users.push(user);
   return user;
 }
-
-module.exports = { getAllUsers, getUserById, createUser };

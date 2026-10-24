@@ -1,7 +1,7 @@
-const express = require("express");
+import express from "express";
 
-const usersRoutes = require("./routes/users");
-const healthRoutes = require("./routes/health");
+import usersRoutes from "./routes/users";
+import healthRoutes from "./routes/health";
 
 const app = express();
 
@@ -20,4 +20,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = app;
+export default app;
