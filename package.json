@@ -2,19 +2,27 @@
   "name": "claude-course-starter",
   "version": "1.0.0",
   "description": "Starter Express API for the Claude Code course projects.",
-  "main": "server.js",
+  "main": "dist/server.js",
   "scripts": {
-    "dev": "node --watch server.js",
-    "start": "node server.js",
-    "test": "node --test",
-    "lint": "eslint ."
+    "build": "tsc",
+    "dev": "tsx watch server.ts",
+    "start": "npm run build && node dist/server.js",
+    "test": "tsx --test tests/users.test.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts"
   },
   "license": "MIT",
   "dependencies": {
     "express": "^4.19.2"
   },
   "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.0.0",
+    "@types/supertest": "^6.0.2",
+    "@typescript-eslint/parser": "^8.0.0",
     "eslint": "^8.57.0",
-    "supertest": "^7.0.0"
+    "supertest": "^7.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
   }
 }
