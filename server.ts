@@ -2,6 +2,7 @@ import express from "express";
 
 import usersRoutes from "./routes/users";
 import healthRoutes from "./routes/health";
+import statusRoutes from "./routes/status";
 
 const app = express();
 
@@ -9,6 +10,7 @@ app.use(express.json());
 
 app.use("/users", usersRoutes);
 app.use("/health", healthRoutes);
+app.use("/status", statusRoutes);
 
 const PORT = process.env.PORT || 3000;
 

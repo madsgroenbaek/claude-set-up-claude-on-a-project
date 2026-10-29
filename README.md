@@ -23,7 +23,7 @@ You are **not** changing the app code. The Express API below is here so you have
 - `package.json` — scripts for `dev`, `build`, `start`, `test`, `typecheck`, and `lint`
 - `tsconfig.json` — TypeScript compiler settings (output goes to `dist/`)
 - `server.ts` — the entry point; starts the API
-- `routes/` — `users.ts` and `health.ts`, one file per resource
+- `routes/` — `users.ts`, `health.ts` and `status.ts`, one file per resource
 - `db/store.ts` — a tiny in-memory data helper
 - `tests/users.test.ts` — a sample test
 - `.env.example` — sample config; real secrets would live in `.env` (which is git-ignored)

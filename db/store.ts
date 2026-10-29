@@ -13,9 +13,10 @@ export type NewUser = Omit<User, "id">;
 const users: User[] = [
   { id: 1, name: "Ada Lovelace", email: "ada@example.com" },
   { id: 2, name: "Alan Turing", email: "alan@example.com" },
+  { id: 3, name: "Grace Hopper", email: "grace@example.com" },
 ];
 
-let nextId = 3;
+let nextId = 4;
 
 export function getAllUsers(): User[] {
   return users;
